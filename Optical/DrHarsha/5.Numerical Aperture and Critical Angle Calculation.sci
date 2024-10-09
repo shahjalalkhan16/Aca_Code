@@ -1,0 +1,13 @@
+clear;
+clc;
+na=1.33; 
+n2=1.59; 
+NA=0.20;
+n1=sqrt((NA^2)+(n2^2));
+disp(n1, "n1=");
+fiy_c=asin(n2/n1);
+fiy_c_degrees=(fiy_c)*(180/%pi);
+disp(fiy_c_degrees, "Critical angle at the core-cladding interface=");
+theta_a=asin(NA/na);
+theta_a_degrees=(theta_a)*(180/%pi);
+disp(theta_a_degrees, "Acceptance angle=");

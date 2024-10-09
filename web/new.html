@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+         td {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calculate(operation) {
+            var val1 = parseFloat(document.getElementById("value1").value);
+            var val2 = parseFloat(document.getElementById("value2").value);
+            var result;
+
+            if (isNaN(val1) || isNaN(val2)) {
+                alert("Please enter valid numbers!");
+                return;
+            }
+
+            switch(operation) {
+                case 'add':
+                    result = val1 + val2;
+                    break;
+                case 'subtract':
+                    result = val1 - val2;
+                    break;
+                case 'multiply':
+                    result = val1 * val2;
+                    break;
+                case 'divide':
+                    if (val2 === 0) {
+                        alert("Cannot divide by zero");
+                        return;
+                    }
+                    result = val1 / val2;
+                    break;
+                default:
+                    result = 0;
+            }
+            document.getElementById("result").value = result;
+        }
+
+        function clearAll() {
+            document.getElementById("value1").value = "";
+            document.getElementById("value2").value = "";
+            document.getElementById("result").value = "";
+        }
+    </script>
+</head>
+<body>
+    <!-- <h2>Simple Calculator</h2> -->
+    <table border="1">
+        <!-- <caption>SIMPLE  CALCULATOR</caption> -->
+         <tr>
+            <th colspan="4">SIMPLE  CALCULATOR</th>
+         </tr>
+        <tr>
+            <td colspan="1">Value1</td>
+            <td colspan="1"><input type="text" id="value1"></td>
+            <td colspan="1">Value2</td>
+            <td colspan="1"><input type="text" id="value2"></td>
+        </tr>
+        <tr>
+            <td colspan="1"><button onclick="calculate('add')">Addition</button></td>
+            <td colspan="1"><button onclick="calculate('subtract')">Subtraction</button></td>
+            <td colspan="1"><button onclick="calculate('multiply')">Multiplication</button></td>
+            <td colspan="1"><button onclick="calculate('divide')">Division</button></td>
+        </tr>
+        <tr>
+            <td colspan="1">Answer:</td>
+            <td colspan="1"><input type="text" id="result" readonly></td>
+            <td colspan="2"><button onclick="clearAll()">CLEAR ALL</button></td>
+        </tr>
+    </table>
+</body>
+</html>

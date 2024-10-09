@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Numbers</title>
+    <script>
+        function sortNumbers() {
+            var num1 = parseFloat(prompt("Enter the first number:"));
+            var num2 = parseFloat(prompt("Enter the second number:"));
+            var num3 = parseFloat(prompt("Enter the third number:"));
+            
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                alert("Please enter valid numbers!");
+                return;
+            }
+
+            var numbers = [num1, num2, num3];
+            numbers.sort(function(a, b) { return a - b; });
+
+            alert("Sorted Numbers: " + numbers.join(", "));
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Sort Three Numbers</h2>
+    <button onclick="sortNumbers()">Sort Numbers</button>
+
+</body>
+</html>
